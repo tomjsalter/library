@@ -16,3 +16,7 @@ function addBookToLibrary() {
 const harryPotter = new Book('J. K. Rowling', 'Harry Potter', '300', 'Read');
 const lordOfTheRings = new Book('J. R. R. Tolkien', 'Lord of the Rings', '400', 'Not read');
 const dune = new Book('Frank Herbert', 'Dune', '450', 'Not read');
+
+myLibrary.push(harryPotter);
+myLibrary.push(lordOfTheRings);
+myLibrary.push(dune);
