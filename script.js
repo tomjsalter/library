@@ -6,3 +6,12 @@ function Book(author, title, pages, read) {
     this.pages = pages,
     this.read = read
 };
+
+function addBookToLibrary(book) {
+    return myLibrary.push(book);
+}
+
+// set of 3 placeholder books to be added into myLibrary array via addBookToLibrary function
+const harryPotter = new Book('J. K. Rowling', 'Harry Potter', '300', 'Read');
+const lordOfTheRings = new Book('J. R. R. Tolkien', 'Lord of the Rings', '400', 'Not read');
+const dune = new Book('Frank Herbert', 'Dune', '450', 'Not read');
