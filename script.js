@@ -12,6 +12,16 @@ function addBookToLibrary() {
     return myLibrary.push(book);
 }
 
+function displayBook() {
+    for (let i = 0; i < myLibrary.length; i++) {
+      const bookAuthor = myLibrary[i].author;
+      const bookTitle = myLibrary[i].title;
+      const pageCount = myLibrary[i].pages;
+      const readStatus = myLibrary[i].read;
+      console.table(bookAuthor, bookTitle, pageCount, readStatus);
+    }
+}
+
 // set of 3 placeholder books to be added into myLibrary array via addBookToLibrary function
 const harryPotter = new Book('J. K. Rowling', 'Harry Potter', '300', 'Read');
 const lordOfTheRings = new Book('J. R. R. Tolkien', 'Lord of the Rings', '400', 'Not read');
