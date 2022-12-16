@@ -1,4 +1,5 @@
 let myLibrary = [];
+const newBook = document.getElementById('new-book');
 
 function Book(author, title, pages, read) {
     this.author = author,
@@ -21,6 +22,10 @@ function displayBook() {
       console.table(bookAuthor, bookTitle, pageCount, readStatus);
     }
 }
+
+newBook.addEventListener("click", () => {
+    // code to go here
+});
 
 // set of 3 placeholder books to be added into myLibrary array via addBookToLibrary function
 const harryPotter = new Book('J. K. Rowling', 'Harry Potter', '300', 'Read');
