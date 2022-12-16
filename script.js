@@ -1,5 +1,6 @@
 let myLibrary = [];
 const newBook = document.getElementById('new-book');
+const popUp = document.querySelector('form');
 
 function Book(author, title, pages, read) {
     this.author = author,
@@ -24,7 +25,7 @@ function displayBook() {
 }
 
 newBook.addEventListener("click", () => {
-    // code to go here
+    popUp.classList.toggle('active', 'force');
 });
 
 // set of 3 placeholder books to be added into myLibrary array via addBookToLibrary function
