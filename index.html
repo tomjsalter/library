@@ -11,9 +11,33 @@
     <header>
         <h1>eLibrary</h1>
         <p>Add books to build your collection!</p>
+        <button id="new-book">Add new book</button>
     </header>
     <main>
-        <button id="new-book">Add new book</button>
+        <form>
+            <fieldset>
+                <legend>Book details</legend>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author">
+                <label for="title">Book title:</label>
+                <input type="text" id="title" name="title">
+                <label for="pages">Page count:</label>
+                <input type="number" id="pages" name="pages">
+            </fieldset>
+            <fieldset>
+                <legend>Read status</legend>
+                <label for="read">Read</label>
+                <input type="radio" id="read" name="read-status" value="read" checked>
+                <label for="not-read">Not read</label>
+                <input type="radio" id="not-read" name="read-status" value="not-read">
+            </fieldset>
+            <fieldset>
+                <legend>Actions</legend>
+                <button type="submit">Submit</button>
+                <button type="reset">Clear</button>
+                <button type="button">Cancel</button>
+            </fieldset>
+        </form>
     </main>
 </body>
 </html>
