@@ -2,7 +2,8 @@ let myLibrary = [];
 const newBook = document.getElementById('new-book');
 const popUp = document.querySelector('form');
 const cancelBtn = document.getElementById('cancel-btn');
-const formSubmit = document.querySelector('form')
+const formSubmit = document.querySelector('form');
+const libraryDisplay = document.querySelector('main');
 
 function Book(author, title, pages, read) {
     this.author = author,
@@ -18,11 +19,17 @@ function addBookToLibrary() {
 
 function displayBook() {
     for (let i = 0; i < myLibrary.length; i++) {
-      const bookAuthor = myLibrary[i].author.value;
-      const bookTitle = myLibrary[i].title.value;
-      const pageCount = myLibrary[i].pages.value;
-      const readStatus = myLibrary[i].read.value;
-      console.table(bookAuthor, bookTitle, pageCount, readStatus);
+        const cardDiv = document.createElement('div');
+        const bookAuthor = document.createElement('p');
+        const bookTitle = document.createElement('p');
+        const pageCount = document.createElement('p');
+        const readStatus = document.createElement('p');
+        bookAuthor.textContent = myLibrary[i].author.value;
+        bookTitle.textContent = myLibrary[i].title.value;
+        pageCount.textContent = myLibrary[i].pages.value;
+        readStatus.textContent = myLibrary[i].read.value;
+        cardDiv.append(bookAuthor, bookTitle, pageCount, readStatus);
+        libraryDisplay.appendChild(cardDiv);
     }
 }
 
