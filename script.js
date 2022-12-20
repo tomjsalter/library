@@ -49,4 +49,5 @@ formSubmit.addEventListener("submit", function(event) {
     const read = document.getElementById("read").value;
     addBookToLibrary(author, title, pages, read);
     displayBook();
+    formSubmit.reset();
 });
