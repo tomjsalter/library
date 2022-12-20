@@ -42,5 +42,6 @@ form.addEventListener("submit", function(event) {
     author = author.value;
     title = title.value;
     pages = pages.value;
+    addBookToLibrary(author, title, pages, read);
     form.reset();
 });
