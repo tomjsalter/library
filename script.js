@@ -6,8 +6,6 @@ const form = document.querySelector('form');
 let author = document.getElementById("author");
 let title = document.getElementById("title");
 let pages = document.getElementById("pages");
-let read = document.getElementById("read");
-let notRead = document.getElementById("not-read");
 
 function Book(author, title, pages, read) {
     this.author = author,
@@ -44,4 +42,5 @@ form.addEventListener("submit", function(event) {
     author = author.value;
     title = title.value;
     pages = pages.value;
+    form.reset();
 });
