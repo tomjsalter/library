@@ -3,9 +3,6 @@ const newBook = document.getElementById('new-book');
 const popUp = document.querySelector('form');
 const cancelBtn = document.getElementById('cancel-btn');
 const form = document.querySelector('form');
-let author = document.getElementById("author");
-let title = document.getElementById("title");
-let pages = document.getElementById("pages");
 
 function Book(author, title, pages, read) {
     this.author = author,
@@ -39,9 +36,18 @@ cancelBtn.addEventListener("click", () => {
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
+    let author = document.getElementById("author");
+    let title = document.getElementById("title");
+    let pages = document.getElementById("pages");
+    let read = document.getElementsByName("read-status");
     author = author.value;
     title = title.value;
     pages = pages.value;
+    if (read[0].checked === true) {
+        read = 'read';
+    } else if (read[1].checked === true) {
+        read = 'not read';
+    }
     addBookToLibrary(author, title, pages, read);
     form.reset();
 });
