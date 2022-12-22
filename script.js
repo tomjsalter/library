@@ -18,6 +18,9 @@ function addBookToLibrary(author, title, pages, read) {
 }
 
 function displayBook() {
+    while (libraryContainer.firstChild) {
+      libraryContainer.removeChild(libraryContainer.lastChild);
+    }
     for (let i = 0; i < myLibrary.length; i++) {
         const cardDiv = document.createElement('div');
         const bookAuthor = document.createElement('p');
@@ -58,3 +61,12 @@ form.addEventListener("submit", function(event) {
     addBookToLibrary(author, title, pages, read);
     form.reset();
 });
+
+// set of 3 placeholder books
+const lordOfTheRings = new Book('J R Tolkien', 'Lord of the Rings', '980', 'Not read');
+const harryPotter = new Book('J K Rowling', 'Harry Potter', '760', 'Read');
+const starWars = new Book('George Lucas', 'Star Wars', '890', 'Not read');
+
+myLibrary.push(lordOfTheRings);
+myLibrary.push(harryPotter);
+myLibrary.push(starWars);
