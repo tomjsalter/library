@@ -27,11 +27,13 @@ function displayBook() {
         const bookTitle = document.createElement('p');
         const pageCount = document.createElement('p');
         const readStatus = document.createElement('p');
+        const removeButton = document.createElement('button');
         bookAuthor.textContent = myLibrary[i].author;
         bookTitle.textContent = myLibrary[i].title;
         pageCount.textContent = myLibrary[i].pages;
         readStatus.textContent = myLibrary[i].read;
-        cardDiv.append(bookAuthor, bookTitle, pageCount, readStatus);
+        removeButton.textContent = "Remove";
+        cardDiv.append(bookAuthor, bookTitle, pageCount, readStatus, removeButton);
         libraryContainer.appendChild(cardDiv);
     }
 }
