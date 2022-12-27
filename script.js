@@ -4,6 +4,7 @@ const popUp = document.querySelector('form');
 const cancelBtn = document.getElementById('cancel-btn');
 const form = document.querySelector('form');
 const libraryContainer = document.querySelector('main');
+let indexValue = 0;
 
 function Book(author, title, pages, read) {
     this.author = author,
@@ -22,19 +23,27 @@ function displayBook() {
       libraryContainer.removeChild(libraryContainer.lastChild);
     }
     for (let i = 0; i < myLibrary.length; i++) {
-        const cardDiv = document.createElement('div');
-        const bookAuthor = document.createElement('p');
-        const bookTitle = document.createElement('p');
-        const pageCount = document.createElement('p');
-        const readStatus = document.createElement('p');
-        const removeButton = document.createElement('button');
+        const cardDiv = document.createElement("div");
+        const bookAuthor = document.createElement("p");
+        const bookTitle = document.createElement("p");
+        const pageCount = document.createElement("p");
+        const readStatus = document.createElement("p");
+        const removeButton = document.createElement("button");
         bookAuthor.textContent = myLibrary[i].author;
         bookTitle.textContent = myLibrary[i].title;
         pageCount.textContent = myLibrary[i].pages;
         readStatus.textContent = myLibrary[i].read;
         removeButton.textContent = "Remove";
-        cardDiv.append(bookAuthor, bookTitle, pageCount, readStatus, removeButton);
+        cardDiv.setAttribute("data-index", `${indexValue}`);
+        cardDiv.append(
+          bookAuthor,
+          bookTitle,
+          pageCount,
+          readStatus,
+          removeButton
+        );
         libraryContainer.appendChild(cardDiv);
+        indexValue++;
     }
 }
 
