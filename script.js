@@ -30,11 +30,13 @@ function displayBook() {
         const pageCount = document.createElement("p");
         const readStatus = document.createElement("p");
         const removeButton = document.createElement("button");
+        const changeStatus = document.createElement("button");
         bookAuthor.textContent = myLibrary[i].author;
         bookTitle.textContent = myLibrary[i].title;
         pageCount.textContent = myLibrary[i].pages;
         readStatus.textContent = myLibrary[i].read;
         removeButton.textContent = "Remove";
+        changeStatus.textContent = readStatus.textContent;
         cardDiv.setAttribute("data-index", `${indexValue}`);
         removeButton.addEventListener("click", () => {
             let cardAtt = cardDiv.getAttribute('data-index');
@@ -47,13 +49,7 @@ function displayBook() {
                 }
             });
         });
-        cardDiv.append(
-          bookAuthor,
-          bookTitle,
-          pageCount,
-          readStatus,
-          removeButton
-        );
+        cardDiv.append(bookAuthor,bookTitle, pageCount, readStatus, removeButton, changeStatus);
         libraryContainer.appendChild(cardDiv);
         indexValue++;
     }
