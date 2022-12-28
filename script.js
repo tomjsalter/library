@@ -36,7 +36,8 @@ function displayBook() {
         removeButton.textContent = "Remove";
         cardDiv.setAttribute("data-index", `${indexValue}`);
         removeButton.addEventListener("click", () => {
-            // code goes here
+            const cardAtt = cardDiv.getAttribute('data-index');
+            console.log(cardAtt);
         });
         cardDiv.append(
           bookAuthor,
