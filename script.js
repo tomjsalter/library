@@ -40,7 +40,9 @@ function displayBook() {
             cardAtt = parseInt(cardAtt);
             myLibrary.forEach((value, index) => {
                 if (cardAtt === index) {
-                    console.log(value);
+                    myLibrary.splice(index, 1);
+                    indexValue = 0;
+                    displayBook();
                 }
             });
         });
