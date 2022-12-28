@@ -19,6 +19,7 @@ function addBookToLibrary(author, title, pages, read) {
 }
 
 function displayBook() {
+    indexValue = 0;
     while (libraryContainer.firstChild) {
       libraryContainer.removeChild(libraryContainer.lastChild);
     }
