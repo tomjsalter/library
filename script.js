@@ -81,14 +81,6 @@ form.addEventListener("submit", function(event) {
         read = 'not read';
     }
     addBookToLibrary(author, title, pages, read);
+    displayBook();
     form.reset();
 });
-
-// set of 3 placeholder books
-const lordOfTheRings = new Book('J R Tolkien', 'Lord of the Rings', '980', 'Not read');
-const harryPotter = new Book('J K Rowling', 'Harry Potter', '760', 'Read');
-const starWars = new Book('George Lucas', 'Star Wars', '890', 'Not read');
-
-myLibrary.push(lordOfTheRings);
-myLibrary.push(harryPotter);
-myLibrary.push(starWars);
