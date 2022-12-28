@@ -35,6 +35,9 @@ function displayBook() {
         readStatus.textContent = myLibrary[i].read;
         removeButton.textContent = "Remove";
         cardDiv.setAttribute("data-index", `${indexValue}`);
+        removeButton.addEventListener("click", () => {
+            // code goes here
+        });
         cardDiv.append(
           bookAuthor,
           bookTitle,
