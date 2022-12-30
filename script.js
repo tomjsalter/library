@@ -28,12 +28,16 @@ function displayBook() {
         const bookAuthor = document.createElement("p");
         const bookTitle = document.createElement("p");
         const pageCount = document.createElement("p");
-        const readStatus = document.createElement("p");
+        const readStatus = document.createElement("button");
         const removeButton = document.createElement("button");
         bookAuthor.textContent = myLibrary[i].author;
         bookTitle.textContent = myLibrary[i].title;
         pageCount.textContent = myLibrary[i].pages;
-        readStatus.textContent = myLibrary[i].read;
+        if (myLibrary[i].read === true) {
+            readStatus.textContent = 'Read';
+        } else if (myLibrary[i].read === false) {
+            readStatus.textContent = 'Not read';
+        }
         removeButton.textContent = "Remove";
         cardDiv.setAttribute("data-index", `${indexValue}`);
         removeButton.addEventListener("click", () => {
@@ -77,9 +81,9 @@ form.addEventListener("submit", function(event) {
     title = title.value;
     pages = pages.value;
     if (read[0].checked === true) {
-        read = 'read';
+        read = true;
     } else if (read[1].checked === true) {
-        read = 'not read';
+        read = false;
     }
     addBookToLibrary(author, title, pages, read);
     displayBook();
