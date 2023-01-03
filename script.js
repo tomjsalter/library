@@ -11,8 +11,15 @@ function Book(author, title, pages, read) {
     this.title = title,
     this.pages = pages,
     this.read = read
+    this.changeStatus = function() {
+        if (read === true) {
+            read = false;
+        } else if(read === false) {
+            read = true;
+        }
+    }
 };
-
+ 
 function addBookToLibrary(author, title, pages, read) {
     const book = new Book(author, title, pages, read);
     return myLibrary.push(book);
@@ -38,6 +45,9 @@ function displayBook() {
         } else if (myLibrary[i].read === false) {
             readStatus.textContent = 'Not read';
         }
+        readStatus.addEventListener("click", () => {
+            myLibrary[i].changeStatus();
+        }); 
         removeButton.textContent = "Remove";
         cardDiv.setAttribute("data-index", `${indexValue}`);
         removeButton.addEventListener("click", () => {
