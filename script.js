@@ -37,12 +37,13 @@ function displayBook() {
         bookTitle.textContent = myLibrary[i].title;
         pageCount.textContent = myLibrary[i].pages;
         if (myLibrary[i].read === true) {
-            readStatus.textContent = 'Read';
-        } else if (myLibrary[i].read === false) {
             readStatus.textContent = 'Not read';
+        } else if (myLibrary[i].read === false) {
+            readStatus.textContent = 'Read';
         }
         readStatus.addEventListener("click", () => {
             myLibrary[i].changeStatus();
+            readStatus.textContent = !myLibrary[i].read ? 'Read' : 'Not read';
         }); 
         removeButton.textContent = "Remove";
         cardDiv.setAttribute("data-index", `${indexValue}`);
