@@ -12,11 +12,7 @@ function Book(author, title, pages, read) {
     this.pages = pages,
     this.read = read
     this.changeStatus = function() {
-        if (read === true) {
-            read = false;
-        } else if(read === false) {
-            read = true;
-        }
+        this.read = !this.read;
     }
 };
  
