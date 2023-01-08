@@ -31,19 +31,21 @@ function displayBook() {
         const bookAuthor = document.createElement("p");
         const bookTitle = document.createElement("p");
         const pageCount = document.createElement("p");
-        const readStatus = document.createElement("button");
+        const readStatus = document.createElement("p");
+        const toggleStatus = document.createElement("button");
         const removeButton = document.createElement("button");
         bookAuthor.textContent = myLibrary[i].author;
         bookTitle.textContent = myLibrary[i].title;
         pageCount.textContent = myLibrary[i].pages;
+        toggleStatus.textContent = 'Change status';
         if (myLibrary[i].read === true) {
-            readStatus.textContent = 'Not read';
+            readStatus.textContent = "Status: Read";
         } else if (myLibrary[i].read === false) {
-            readStatus.textContent = 'Read';
+            readStatus.textContent = "Status: Not read";
         }
-        readStatus.addEventListener("click", () => {
+        toggleStatus.addEventListener("click", () => {
             myLibrary[i].changeStatus();
-            readStatus.textContent = !myLibrary[i].read ? 'Read' : 'Not read';
+            readStatus.textContent = !myLibrary[i].read ? "Status: Read" : "Status: Not read";
         }); 
         removeButton.textContent = "Remove";
         cardDiv.setAttribute("data-index", `${indexValue}`);
@@ -63,6 +65,7 @@ function displayBook() {
           bookTitle,
           pageCount,
           readStatus,
+          toggleStatus,
           removeButton
         );
         libraryContainer.appendChild(cardDiv);
