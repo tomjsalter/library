@@ -70,6 +70,7 @@ function displayBook() {
         );
         libraryContainer.appendChild(cardDiv);
         indexValue++;
+        popUp.classList.remove('active');
     }
 }
 
