@@ -83,7 +83,7 @@ legend {
 
 #read-fieldset > div {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 #action-fieldset > div {
@@ -98,9 +98,12 @@ legend {
 }
 
 .book-input > input {
-    height: 32px;
+    height: 36px;
+    padding: 8px;
+    font-size: 1rem;
 }
 
 .active {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
