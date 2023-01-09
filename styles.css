@@ -116,3 +116,15 @@ legend {
     flex-direction: column;
     gap: 30px;
 }
+
+#library-display {
+    display: grid;
+    padding: 20px;
+    column-gap: 30px;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.book-card {
+    padding: 20px;
+}
