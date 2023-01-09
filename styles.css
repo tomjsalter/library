@@ -31,6 +31,8 @@ header {
 
 header > button {
     margin-top: 20px;
+    height: 38px;
+    width: 130px;
 }
 
 button {
@@ -92,6 +94,7 @@ legend {
 
 #action-fieldset > div {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
