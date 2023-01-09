@@ -75,9 +75,15 @@ legend {
     row-gap: 10px;
 }
 
-#read-fieldset > div {
+#read-fieldset {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+#read-fieldset > div {
+    display: flex;
+    gap: 10px;
 }
 
 #action-fieldset > div {
