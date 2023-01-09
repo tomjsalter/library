@@ -2,9 +2,12 @@ let myLibrary = [];
 const newBook = document.getElementById('new-book');
 const popUp = document.querySelector('form');
 const cancelBtn = document.getElementById('cancel-btn');
+const resetBtn = document.getElementById('reset-btn');
 const form = document.querySelector('form');
 const libraryContainer = document.querySelector('main');
 let indexValue = 0;
+cancelBtn.classList.add("change-status-btn");
+resetBtn.classList.add('change-status-btn');
 
 function Book(author, title, pages, read) {
     this.author = author,
@@ -38,6 +41,8 @@ function displayBook() {
         bookTitle.textContent = myLibrary[i].title;
         pageCount.textContent = myLibrary[i].pages;
         toggleStatus.textContent = 'Change status';
+        toggleStatus.classList.add('change-status-btn');
+        removeButton.classList.add('remove-btn');
         if (myLibrary[i].read === true) {
             readStatus.textContent = "Status: Read";
         } else if (myLibrary[i].read === false) {
@@ -62,8 +67,8 @@ function displayBook() {
             });
         });
         cardDiv.append(
-          bookAuthor,
           bookTitle,
+          bookAuthor,
           pageCount,
           readStatus,
           toggleStatus,

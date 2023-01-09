@@ -8,7 +8,7 @@
     --font-color: #fff;
     --header-bg-color: #1B1C29;
     --button-bg-color: #745DF5;
-    --form-bg-color: #eeeeee;
+    --form-bg-color: #25263C;
     --main-bg-color: #25263C;
 }
 
@@ -58,7 +58,7 @@ form {
     padding: 30px;
     max-width: 600px;
     margin: auto;
-    color: var(--header-bg-color);
+    color: var(--font-color)
 }
 
 #form-bg {
@@ -76,7 +76,7 @@ legend {
     font-size: 0.8rem;
     font-weight: 400;
     margin-bottom: 10px;
-    color: #1b1c296f;
+    color: rgba(255, 255, 255, 0.3);
 }
 
 #book-fieldset {
@@ -128,7 +128,6 @@ height: 100vh;
 
 #library-display {
     display: grid;
-    max-width: 900px;
     padding: 20px;
     column-gap: 2rem;
     margin: auto;
@@ -138,8 +137,29 @@ height: 100vh;
 .book-card {
     padding: 20px;
     display: flex;
+    width: 350px;
     gap: 10px;
     flex-direction: column;
     background-color: var(--main-bg-color);
     border-radius: 6px;
+}
+
+.remove-btn {
+    border: solid 1px #DC8821;
+    background-color: #25263C;
+    color: #DC8821;
+}
+
+.remove-btn:hover {
+    background-color: #2f2d3045;
+}
+
+.change-status-btn {
+    border: solid 1px #fff;
+    background-color: #25263C;
+    color: #fff;
+}
+
+.change-status-btn:hover {
+    background-color: rgba(255, 255, 255, 0.081);
 }
