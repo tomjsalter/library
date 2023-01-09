@@ -65,6 +65,10 @@ legend {
     margin-bottom: 10px;
 }
 
+#form-container {
+    justify-self: center;
+}
+
 #book-fieldset {
     display: flex;
     flex-direction: column;
@@ -82,7 +86,13 @@ legend {
 }
 
 .book-input {
-    height: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.book-input > input {
+    height: 32px;
 }
 
 .active {

@@ -20,9 +20,18 @@
     <form method="post" id="form-container">
         <fieldset id="book-fieldset">
             <legend>Book details</legend>
-            <label for="author">Author: <input type="text" id="author" name="author" class="book-input"></label>
-            <label for="title">Book title: <input type="text" id="title" name="title" class="book-input"></label>
-            <label for="pages">Page count: <input type="number" id="pages" name="pages" class="book-input"></label>
+            <div class="book-input">
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author">
+            </div>
+            <div class="book-input">
+                <label for="title">Book title</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div class="book-input">
+                <label for="pages">Page count</label>
+                <input type="number" id="pages" name="pages">
+            </div>
         </fieldset>
         <fieldset id="read-fieldset">
             <legend>Read status</legend>
