@@ -17,42 +17,44 @@
         <p>Add books to build your library!</p>
         <button id="new-book">Add new book</button>
     </header>
-    <form method="post" id="form-container">
-        <fieldset id="book-fieldset">
-            <legend>Book details</legend>
-            <div class="book-input">
-                <label for="author">Author</label>
-                <input type="text" id="author" name="author">
-            </div>
-            <div class="book-input">
-                <label for="title">Book title</label>
-                <input type="text" id="title" name="title">
-            </div>
-            <div class="book-input">
-                <label for="pages">Page count</label>
-                <input type="number" id="pages" name="pages">
-            </div>
-        </fieldset>
-        <fieldset id="read-fieldset">
-            <legend>Read status</legend>
-            <div>
-                <input type="radio" id="read" name="read-status" value="read" checked>
-                <label for="read">Read</label>
-            </div>
-            <div>
-                <input type="radio" id="not-read" name="read-status" value="not-read">
-                <label for="not-read">Not read</label>
-            </div>
-        </fieldset>
-        <fieldset id="action-fieldset">
-            <legend>Actions</legend>
-            <div>
-                <button type="submit" id="submit-btn" value="submit">Submit</button>
-                <button type="reset">Reset</button>
-                <button type="reset" id="cancel-btn" >Cancel</button>
-            </div>
-        </fieldset>
-    </form>
+    <div id="form-bg">
+        <form method="post" id="form-container">
+            <fieldset id="book-fieldset">
+                <legend>Book details</legend>
+                <div class="book-input">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author">
+                </div>
+                <div class="book-input">
+                    <label for="title">Book title</label>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div class="book-input">
+                    <label for="pages">Page count</label>
+                    <input type="number" id="pages" name="pages">
+                </div>
+            </fieldset>
+            <fieldset id="read-fieldset">
+                <legend>Read status</legend>
+                <div>
+                    <input type="radio" id="read" name="read-status" value="read" checked>
+                    <label for="read">Read</label>
+                </div>
+                <div>
+                    <input type="radio" id="not-read" name="read-status" value="not-read">
+                    <label for="not-read">Not read</label>
+                </div>
+            </fieldset>
+            <fieldset id="action-fieldset">
+                <legend>Actions</legend>
+                <div>
+                    <button type="submit" id="submit-btn" value="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                    <button type="reset" id="cancel-btn" >Cancel</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
     <main>
     </main>
 </body>

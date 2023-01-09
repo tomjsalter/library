@@ -5,17 +5,18 @@
 }
 
 :root {
-    --dark-color: color: rgb(21, 35, 35);
-    --med-color: #efefef7f;
-    --light-color: #cccccc;
+    --font-color: color: rgb(21, 35, 35);
+    --header-bg-color: #e8e8e8bb;
+    --button-bg-color: #cccccc;
+    --form-bg-color: #efefef7f;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     display: grid;
-    grid-template-rows: 200px min-content 1fr;
+    grid-template-rows: 200px auto 1fr;
     font-size: 16px;
-    color: var(--dark-color);
+    color: var(--font-color);
 }
 
 header {
@@ -25,7 +26,7 @@ header {
     align-items: center;
     padding: 30px;
     gap: 10px;
-    background-color: var(--med-color);
+    background-color: var(--header-bg-color);
 }
 
 header > button {
@@ -38,7 +39,7 @@ button {
     border: none;
     border-radius: 0.2rem;
     font-size: 1rem;
-    background-color: var(--light-color);
+    background-color: var(--button-bg-color);
 }
 
 button:hover {
@@ -50,11 +51,18 @@ button:hover {
 form {
     display: none;
     padding: 30px;
+    max-width: 600px;
+    margin: auto;
+}
+
+#form-bg {
+    background-color: var(--form-bg-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 fieldset {
     border: none;
-    margin-bottom: 30px;
+    max-width: 600px;
 }
 
 legend {
@@ -63,10 +71,6 @@ legend {
     font-weight: 400;
     color: rgba(105, 105, 105, 0.6);
     margin-bottom: 10px;
-}
-
-#form-container {
-    justify-self: center;
 }
 
 #book-fieldset {
@@ -101,9 +105,11 @@ legend {
     height: 36px;
     padding: 8px;
     font-size: 1rem;
+    border: none;
 }
 
 .active {
     display: flex;
     flex-direction: column;
+    gap: 30px;
 }
