@@ -5,10 +5,11 @@
 }
 
 :root {
-    --font-color: color: rgb(21, 35, 35);
-    --header-bg-color: #e8e8e8bb;
-    --button-bg-color: #cccccc;
-    --form-bg-color: #efefef7f;
+    --font-color: #fff;
+    --header-bg-color: #1B1C29;
+    --button-bg-color: #745DF5;
+    --form-bg-color: #eeeeee;
+    --main-bg-color: #25263C;
 }
 
 body {
@@ -31,22 +32,24 @@ header {
 
 header > button {
     margin-top: 20px;
-    height: 38px;
+    height: 45px;
     width: 130px;
+    background-color: var(--button-bg-color);
 }
 
 button {
-    height: 38px;
+    height: 45px;
     width: 130px;
     border: none;
-    border-radius: 0.2rem;
+    border-radius: 6px;
     font-size: 1rem;
     background-color: var(--button-bg-color);
+    color: var(--font-color);
 }
 
 button:hover {
     cursor: pointer;
-    background-color: #ccccccbe;
+    background-color: #816bff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -55,6 +58,7 @@ form {
     padding: 30px;
     max-width: 600px;
     margin: auto;
+    color: var(--header-bg-color);
 }
 
 #form-bg {
@@ -71,8 +75,8 @@ legend {
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: 400;
-    color: rgba(105, 105, 105, 0.6);
     margin-bottom: 10px;
+    color: #1b1c296f;
 }
 
 #book-fieldset {
@@ -117,14 +121,25 @@ legend {
     gap: 30px;
 }
 
+#library-bg {
+    background-color: var(--header-bg-color);
+height: 100vh;  
+}
+
 #library-display {
     display: grid;
+    max-width: 900px;
     padding: 20px;
-    column-gap: 30px;
+    column-gap: 2rem;
     margin: auto;
     grid-template-columns: repeat(3, 1fr);
 }
 
 .book-card {
     padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    background-color: var(--main-bg-color);
+    border-radius: 6px;
 }
