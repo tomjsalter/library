@@ -131,8 +131,10 @@ legend {
 #library-display {
     display: grid;
     padding: 20px;
-    column-gap: 2rem;
     margin: auto;
+    justify-items: center;
+    column-gap: 20px;
+    max-width: 1200px;
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -162,4 +164,18 @@ legend {
     border: solid 1px var(--change-color);
     color: var(--change-color);
     background-color: #EEF5FF;
+}
+
+.book-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.book-author, .page-count, .read-status {
+    font-weight: 500;
+}
+
+.read-status {
+    margin-bottom: 20px;
 }

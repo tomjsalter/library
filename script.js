@@ -37,12 +37,16 @@ function displayBook() {
         const readStatus = document.createElement("p");
         const toggleStatus = document.createElement("button");
         const removeButton = document.createElement("button");
-        bookAuthor.textContent = myLibrary[i].author;
+        bookAuthor.textContent = `Author: ${myLibrary[i].author}`;
         bookTitle.textContent = myLibrary[i].title;
-        pageCount.textContent = myLibrary[i].pages;
+        pageCount.textContent = `Pages: ${myLibrary[i].pages}`;
         toggleStatus.textContent = 'Change status';
         toggleStatus.classList.add("secondary-btn", "change-status");
         removeButton.classList.add("secondary-btn", "remove");
+        bookAuthor.classList.add("book-author");
+        bookTitle.classList.add("book-title");
+        pageCount.classList.add("page-count");
+        readStatus.classList.add("read-status");
         if (myLibrary[i].read === true) {
             readStatus.textContent = "Status: Read";
         } else if (myLibrary[i].read === false) {
@@ -109,7 +113,7 @@ form.addEventListener("submit", function(event) {
 
 // set of 3 placeholder books
 const harryPotter = new Book('J. K. Rowling', 'Harry Potter', '300', 'Read');
-const lordOfTheRings = new Book('J. R. R. Tolkien', 'Lord of the Rings', '400', 'Not read');
+const lordOfTheRings = new Book('J. R. R. Tolkien', 'Lord of the Rings: Battle for Middle Earth', '400', 'Not read');
 const dune = new Book('Frank Herbert', 'Dune', '450', 'Not read');
 myLibrary.push(harryPotter);
 myLibrary.push(lordOfTheRings);
