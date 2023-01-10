@@ -111,11 +111,13 @@ form.addEventListener("submit", function(event) {
     form.reset();
 });
 
-// set of 3 placeholder books
+// set of 4 placeholder books
 const harryPotter = new Book('J. K. Rowling', 'Harry Potter', '300', 'Read');
 const lordOfTheRings = new Book('J. R. R. Tolkien', 'Lord of the Rings: Battle for Middle Earth', '400', 'Not read');
 const dune = new Book('Frank Herbert', 'Dune', '450', 'Not read');
+const starWars = new Book('George Lucas', 'Star Wars: A New Hope', '768', 'Not read');
 myLibrary.push(harryPotter);
 myLibrary.push(lordOfTheRings);
 myLibrary.push(dune);
+myLibrary.push(starWars);
 displayBook();

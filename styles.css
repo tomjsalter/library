@@ -133,7 +133,8 @@ legend {
     padding: 20px;
     margin: auto;
     justify-items: center;
-    column-gap: 20px;
+    column-gap: 30px;
+    row-gap: 30px;
     max-width: 1200px;
     grid-template-columns: repeat(3, 1fr);
 }
