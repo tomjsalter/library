@@ -41,8 +41,8 @@ function displayBook() {
         bookTitle.textContent = myLibrary[i].title;
         pageCount.textContent = myLibrary[i].pages;
         toggleStatus.textContent = 'Change status';
-        toggleStatus.classList.add('change-status-btn');
-        removeButton.classList.add('remove-btn');
+        toggleStatus.classList.add("secondary-btn", "change-status");
+        removeButton.classList.add("secondary-btn", "remove");
         if (myLibrary[i].read === true) {
             readStatus.textContent = "Status: Read";
         } else if (myLibrary[i].read === false) {
