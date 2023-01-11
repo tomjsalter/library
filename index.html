@@ -17,9 +17,9 @@
         <p>Add books to build your library!</p>
         <button id="new-book">Add new book</button>
     </header>
-    <div id="form-bg">
+    <div class="form-bg">
         <form method="post" id="form-container">
-            <fieldset id="book-fieldset">
+            <fieldset class="fieldset">
                 <legend>Book details</legend>
                 <div class="book-input">
                     <label for="author">Author</label>
@@ -34,9 +34,9 @@
                     <input type="number" id="pages" name="pages">
                 </div>
             </fieldset>
-            <fieldset id="read-fieldset">
+            <fieldset class="fieldset">
                 <legend>Read status</legend>
-                <div>
+                <div class="radio-btns">
                     <input type="radio" id="read" name="read-status" value="read" checked>
                     <label for="read">Read</label>
                 </div>
@@ -45,9 +45,9 @@
                     <label for="not-read">Not read</label>
                 </div>
             </fieldset>
-            <fieldset id="action-fieldset">
+            <fieldset class="fieldset">
                 <legend>Actions</legend>
-                <div>
+                <div class="action-btns">
                     <button type="submit" id="submit-btn" value="submit" class="secondary-btn">Submit</button>
                     <button type="reset" id="reset-btn" class="secondary-btn">Reset</button>
                     <button type="reset" id="cancel-btn" class="secondary-btn">Cancel</button>
@@ -55,8 +55,8 @@
             </fieldset>
         </form>
     </div>
-    <div id="library-bg">
-        <main id="library-display">
+    <div class="library-bg">
+        <main class="library-display">
         </main>
     </div>
 </body>

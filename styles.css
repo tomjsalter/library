@@ -35,10 +35,6 @@ header {
 
 header > button {
     margin-top: 20px;
-    height: 45px;
-    width: 130px;
-    background-color: var(--button-bg-color);
-    color: white;
 }
 
 button {
@@ -49,9 +45,6 @@ button {
     font-size: 1rem;
     background-color: var(--button-bg-color);
     color: white;
-}
-
-button:hover {
     cursor: pointer;
 }
 
@@ -63,7 +56,7 @@ form {
     color: var(--font-color);
 }
 
-#form-bg {
+.form-bg {
     background-color: var(--form-bg-color);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
@@ -76,37 +69,27 @@ fieldset {
 legend {
     text-transform: uppercase;
     font-size: 0.8rem;
-    font-weight: 400;
     margin-bottom: 10px;
     color: #00285676;
 }
 
-#book-fieldset {
-    display: flex;
+.fieldset {
     flex-direction: column;
-    row-gap: 10px;
 }
 
-#read-fieldset {
+.radio-btns, .action-btns, .book-input, .active, .fieldset, .book-card {
     display: flex;
-    flex-direction: column;
+}
+
+.radio-btns, .action-btns, .fieldset {
     gap: 10px;
 }
 
-#read-fieldset > div {
-    display: flex;
-    gap: 8px;
-}
-
-#action-fieldset > div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.book-input, .active, .book-card {
+    flex-direction: column;
 }
 
 .book-input {
-    display: flex;
-    flex-direction: column;
     gap: 6px;
 }
 
@@ -118,17 +101,15 @@ legend {
 }
 
 .active {
-    display: flex;
-    flex-direction: column;
     gap: 30px;
 }
 
-#library-bg {
+.library-bg {
     background-color: #fff;
     height: 100vh;  
 }
 
-#library-display {
+.library-display {
     display: grid;
     padding: 20px;
     margin: auto;
@@ -141,10 +122,8 @@ legend {
 
 .book-card {
     padding: 20px;
-    display: flex;
     width: 350px;
     gap: 10px;
-    flex-direction: column;
     background-color: var(--card-bg-color);
     border-radius: 6px;
 }
