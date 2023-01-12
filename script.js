@@ -5,6 +5,7 @@ const cancelBtn = document.getElementById('cancel-btn');
 const resetBtn = document.getElementById('reset-btn');
 const form = document.querySelector('form');
 const libraryContainer = document.querySelector('main');
+const removeButton = document.createElement("button");
 let indexValue = 0;
 cancelBtn.classList.add("change-status-btn");
 resetBtn.classList.add('change-status-btn');
@@ -32,48 +33,44 @@ function buildBookItem() {
     const pageCount = document.createElement("p");
     const readStatus = document.createElement("p");
     const toggleStatus = document.createElement("button");
-    const removeButton = document.createElement("button");
-    bookAuthor.textContent = `Author: ${myLibrary[i].author}`;
-    bookTitle.textContent = myLibrary[i].title;
-    pageCount.textContent = `Pages: ${myLibrary[i].pages}`;
-    toggleStatus.textContent = "Change status";
-    toggleStatus.classList.add("secondary-btn", "change-status");
-    removeButton.classList.add("secondary-btn", "remove");
-    bookAuthor.classList.add("book-author");
     bookTitle.classList.add("book-title");
+    bookAuthor.classList.add("book-author");
     pageCount.classList.add("page-count");
     readStatus.classList.add("read-status");
+    bookTitle.textContent = myLibrary[i].title;
+    bookAuthor.textContent = `Author: ${myLibrary[i].author}`;
+    pageCount.textContent = `Pages: ${myLibrary[i].pages}`;
     readStatus.textContent = !myLibrary[i].read ? "Status: Not read": "Status: Read";
+    toggleStatus.textContent = "Change status";
+    toggleStatus.classList.add("secondary-btn", "change-status");
     toggleStatus.addEventListener("click", () => {
         myLibrary[i].changeStatus();
         readStatus.textContent = !myLibrary[i].read ? "Status: Not read" : "Status: Read";
     });
-    removeButton.textContent = "Remove";
+    buildRemoveBtn();
     cardDiv.setAttribute("data-index", `${indexValue}`);
     cardDiv.classList.add("book-card");
-    removeButton.addEventListener("click", () => {
-        let cardAtt = cardDiv.getAttribute("data-index");
-        cardAtt = parseInt(cardAtt);
-        myLibrary.forEach((value, index) => {
-        if (cardAtt === index) {
-            myLibrary.splice(index, 1);
-            indexValue = 0;
-            displayBook();
-        }
-        });
-    });
-    cardDiv.append(
-        bookTitle,
-        bookAuthor,
-        pageCount,
-        readStatus,
-        toggleStatus,
-        removeButton
-    );
+    cardDiv.append(bookTitle, bookAuthor, pageCount, readStatus, toggleStatus, removeButton);
     libraryContainer.appendChild(cardDiv);
     indexValue++;
     popUp.classList.remove("active");
     }
+}
+
+function buildRemoveBtn() {
+    removeButton.textContent = "Remove";
+    removeButton.classList.add("secondary-btn", "remove");
+    removeButton.addEventListener("click", () => {
+      let cardAtt = cardDiv.getAttribute("data-index");
+      cardAtt = parseInt(cardAtt);
+      myLibrary.forEach((value, index) => {
+        if (cardAtt === index) {
+          myLibrary.splice(index, 1);
+          indexValue = 0;
+          displayBook();
+        }
+      });
+    });
 }
 
 function displayBook() {
