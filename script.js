@@ -91,7 +91,6 @@ cancelBtn.addEventListener("click", () => {
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
-
     const formResult = new FormData(form);
     let author = formResult.get("author");
     let title = formResult.get("title");
