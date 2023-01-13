@@ -91,18 +91,12 @@ cancelBtn.addEventListener("click", () => {
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
-    let author = document.getElementById("author");
-    let title = document.getElementById("title");
-    let pages = document.getElementById("pages");
-    let read = document.getElementsByName("read-status");
-    author = author.value;
-    title = title.value;
-    pages = pages.value;
-    if (read[0].checked === true) {
-        read = true;
-    } else if (read[1].checked === true) {
-        read = false;
-    }
+
+    const formResult = new FormData(form);
+    let author = formResult.get("author");
+    let title = formResult.get("title");
+    let pages = formResult.get("pages");
+    let read = formResult.get("read");
     addBookToLibrary(author, title, pages, read);
     displayBook();
     form.reset();
