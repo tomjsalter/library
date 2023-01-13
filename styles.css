@@ -11,7 +11,6 @@
     --form-bg-color: #EEF5FF;
     --card-bg-color: #EEF5FF;
     --remove-color: #ff5868;
-    --change-color: #f88d4a;
 }
 
 body {
@@ -155,7 +154,28 @@ input:valid:required {
     gap: 10px;
     background-color: var(--card-bg-color);
     border-radius: 6px;
+    align-items: flex-start;
 }
+
+
+.book-read, .book-not-read {
+    border: none;
+    color: white; 
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+}
+
+.book-read {
+    background-color: #86C3B6;
+}
+
+.book-not-read {
+    background-color: #D07465;
+}
+
 
 .remove-btn {
     color: #00285676;
@@ -164,17 +184,11 @@ input:valid:required {
     height: 45px;
     font-size: 1rem;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .remove-btn:hover {
     color: var(--remove-color);
-    background-color: #EEF5FF;
-}
-
-
-.change-status:hover {
-    border: solid 1px var(--change-color);
-    color: var(--change-color);
     background-color: #EEF5FF;
 }
 

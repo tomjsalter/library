@@ -6,9 +6,8 @@ const resetBtn = document.getElementById('reset-btn');
 const form = document.querySelector('form');
 const libraryContainer = document.querySelector('main');
 const removeButton = document.createElement("button");
+const toggleStatus = document.createElement("button");
 let indexValue = 0;
-cancelBtn.classList.add("change-status-btn");
-resetBtn.classList.add('change-status-btn');
 
 function Book(author, title, pages, read) {
     this.author = author,
@@ -31,29 +30,36 @@ function buildBookItem() {
     const bookAuthor = document.createElement("p");
     const bookTitle = document.createElement("p");
     const pageCount = document.createElement("p");
-    const readStatus = document.createElement("p");
-    const toggleStatus = document.createElement("button");
     bookTitle.classList.add("book-title");
     bookAuthor.classList.add("book-author");
     pageCount.classList.add("page-count");
-    readStatus.classList.add("read-status");
     bookTitle.textContent = myLibrary[i].title;
     bookAuthor.textContent = `Author: ${myLibrary[i].author}`;
     pageCount.textContent = `Pages: ${myLibrary[i].pages}`;
-    readStatus.textContent = !myLibrary[i].read ? "Status: Not read": "Status: Read";
-    toggleStatus.textContent = "Change status";
-    toggleStatus.classList.add("secondary-btn", "change-status");
+    toggleStatus.textContent = !myLibrary[i].read ? "Not read": "Read";
+    toggleStatusClass();
     toggleStatus.addEventListener("click", () => {
         myLibrary[i].changeStatus();
-        readStatus.textContent = !myLibrary[i].read ? "Status: Not read" : "Status: Read";
+        toggleStatus.textContent = !myLibrary[i].read ? "Not read" : "Read";
+        toggleStatusClass();
     });
     buildRemoveBtn();
     cardDiv.setAttribute("data-index", `${indexValue}`);
     cardDiv.classList.add("book-card");
-    cardDiv.append(bookTitle, bookAuthor, pageCount, readStatus, toggleStatus, removeButton);
+    cardDiv.append(toggleStatus, bookTitle, bookAuthor, pageCount, removeButton);
     libraryContainer.appendChild(cardDiv);
     indexValue++;
     popUp.classList.remove("active");
+    }
+}
+
+function toggleStatusClass() {
+    if (toggleStatus.textContent === "Not read") {
+      toggleStatus.classList.add("book-not-read");
+      toggleStatus.classList.remove("book-read");
+    } else if (toggleStatus.textContent === "Read") {
+      toggleStatus.classList.add("book-read");
+      toggleStatus.classList.remove("book-not-read");
     }
 }
 
