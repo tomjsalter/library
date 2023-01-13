@@ -34,16 +34,14 @@ header {
 }
 
 header > button {
-    margin-top: 20px;
-}
-
-button {
-    height: 45px;
     width: 130px;
-    border: none;
+    margin-top: 20px;
+    padding: 0px 20px;
+    height: 45px;
     border-radius: 6px;
-    font-size: 1rem;
     background-color: var(--button-bg-color);
+    border: none;
+    font-size: 1rem;
     color: white;
     cursor: pointer;
 }
@@ -59,6 +57,14 @@ form {
 .form-bg {
     background-color: var(--form-bg-color);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.form-btn {
+   border: solid 1px #002856;
+   background-color: #EEF5FF;
+   color: var(--font-color); 
+   height: 45px;
+   width: 130px;
 }
 
 fieldset {
@@ -137,17 +143,20 @@ input:valid:required {
     border-radius: 6px;
 }
 
-.secondary-btn {
-   border: solid 1px #002856;
-   background-color: #EEF5FF;
-   color: var(--font-color); 
+.remove-btn {
+    color: #00285676;
+    border: none;
+    background-color: var(--card-bg-color);
+    height: 45px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-.remove:hover {
-    border: solid 1px var(--remove-color);
+.remove-btn:hover {
     color: var(--remove-color);
     background-color: #EEF5FF;
 }
+
 
 .change-status:hover {
     border: solid 1px var(--change-color);

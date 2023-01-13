@@ -58,8 +58,8 @@ function buildBookItem() {
 }
 
 function buildRemoveBtn() {
-    removeButton.textContent = "Remove";
-    removeButton.classList.add("secondary-btn", "remove");
+    removeButton.textContent = "Remove book";
+    removeButton.classList.add("remove-btn");
     removeButton.addEventListener("click", () => {
       let cardAtt = cardDiv.getAttribute("data-index");
       cardAtt = parseInt(cardAtt);

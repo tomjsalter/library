@@ -15,7 +15,7 @@
     <header>
         <h1>The Bookshelf</h1>
         <p>Add books to build your library!</p>
-        <button id="new-book">Add new book</button>
+        <button id="new-book">&#43; Add book</button>
     </header>
     <div class="form-bg">
         <form method="post" id="form-container">
@@ -40,7 +40,7 @@
                     <input type="radio" id="read" name="read-status" value="read" checked>
                     <label for="read">Read</label>
                 </div>
-                <div>
+                <div class="radio-btns">
                     <input type="radio" id="not-read" name="read-status" value="not-read">
                     <label for="not-read">Not read</label>
                 </div>
@@ -48,9 +48,9 @@
             <fieldset class="fieldset">
                 <legend>Actions</legend>
                 <div class="action-btns">
-                    <button type="submit" id="submit-btn" value="submit" class="secondary-btn">Submit</button>
-                    <button type="reset" id="reset-btn" class="secondary-btn">Reset</button>
-                    <button type="reset" id="cancel-btn" class="secondary-btn">Cancel</button>
+                    <button type="submit" id="submit-btn" value="submit" class="form-btn">Submit</button>
+                    <button type="reset" id="reset-btn" class="form-btn">Reset</button>
+                    <button type="reset" id="cancel-btn" class="form-btn">Cancel</button>
                 </div>
             </fieldset>
         </form>
