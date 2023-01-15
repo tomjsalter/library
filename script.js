@@ -5,8 +5,6 @@ const cancelBtn = document.getElementById('cancel-btn');
 const resetBtn = document.getElementById('reset-btn');
 const form = document.querySelector('form');
 const libraryContainer = document.querySelector('main');
-const removeButton = document.createElement("button");
-const toggleStatus = document.createElement("button");
 let indexValue = 0;
 
 function Book(author, title, pages, read) {
@@ -30,13 +28,15 @@ function buildBookItem() {
     const bookAuthor = document.createElement("p");
     const bookTitle = document.createElement("p");
     const pageCount = document.createElement("p");
+    const removeButton = document.createElement("button");
+    const toggleStatus = document.createElement("button");
     bookTitle.classList.add("book-title");
     bookAuthor.classList.add("book-author");
     pageCount.classList.add("page-count");
     bookTitle.textContent = myLibrary[i].title;
     bookAuthor.textContent = `Author: ${myLibrary[i].author}`;
     pageCount.textContent = `Pages: ${myLibrary[i].pages}`;
-    toggleStatus.textContent = !myLibrary[i].read ? "Not read": "Read";
+    toggleStatus.textContent = !myLibrary[i].read ? "Not read" : "Read";
     toggleStatusClass();
     toggleStatus.addEventListener("click", () => {
         myLibrary[i].changeStatus();
