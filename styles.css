@@ -157,7 +157,6 @@ input:valid:required {
     align-items: flex-start;
 }
 
-
 .book-read, .book-not-read {
     border: none;
     color: white; 
@@ -175,7 +174,6 @@ input:valid:required {
 .book-not-read {
     background-color: #D07465;
 }
-
 
 .remove-btn {
     color: #00285676;
