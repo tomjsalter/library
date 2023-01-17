@@ -41,8 +41,8 @@ function displayBook() {
     bookTitle.textContent = myLibrary[i].title;
     pageCount.textContent = `Pages: ${myLibrary[i].pages}`;
     toggleStatus.textContent = "Change status";
-    toggleStatus.classList.add("secondary-btn", "change-status");
-    removeButton.classList.add("remove-btn");
+    toggleStatus.classList.add("form-btn");
+    removeButton.classList.add("form-btn");
     bookAuthor.classList.add("book-author");
     bookTitle.classList.add("book-title");
     pageCount.classList.add("page-count");
@@ -94,13 +94,11 @@ cancelBtn.addEventListener("click", () => {
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  let author = document.getElementById("author");
-  let title = document.getElementById("title");
-  let pages = document.getElementById("pages");
+  const formResult = new FormData(form);
+  let author = formResult.get("author");
+  let title = formResult.get("title");
+  let pages = formResult.get("pages");
   let read = document.getElementsByName("read-status");
-  author = author.value;
-  title = title.value;
-  pages = pages.value;
   if (read[0].checked === true) {
     read = true;
   } else if (read[1].checked === true) {
@@ -110,24 +108,3 @@ form.addEventListener("submit", function (event) {
   displayBook();
   form.reset();
 });
-
-// set of 4 placeholder books
-const harryPotter = new Book("J. K. Rowling", "Harry Potter", "300", "Read");
-const lordOfTheRings = new Book(
-  "J. R. R. Tolkien",
-  "Lord of the Rings: Battle for Middle Earth",
-  "400",
-  "Not read"
-);
-const dune = new Book("Frank Herbert", "Dune", "450", "Not read");
-const starWars = new Book(
-  "George Lucas",
-  "Star Wars: A New Hope",
-  "768",
-  "Not read"
-);
-myLibrary.push(harryPotter);
-myLibrary.push(lordOfTheRings);
-myLibrary.push(dune);
-myLibrary.push(starWars);
-displayBook();
