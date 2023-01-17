@@ -64,15 +64,7 @@ function buildBook() {
       cardDiv.setAttribute("data-index", `${indexValue}`);
       cardDiv.classList.add("book-card");
       removeButton.addEventListener("click", () => {
-        let cardAtt = cardDiv.getAttribute("data-index");
-        cardAtt = parseInt(cardAtt);
-        myLibrary.forEach((value, index) => {
-          if (cardAtt === index) {
-            myLibrary.splice(index, 1);
-            indexValue = 0;
-            displayBook();
-          }
-        });
+        removeBook();
       });
       cardDiv.append(
         bookTitle,
@@ -86,6 +78,18 @@ function buildBook() {
       indexValue++;
       popUp.classList.remove("active");
     }
+}
+
+function removeBook(cardDiv) {
+  let cardAtt = cardDiv.getAttribute("data-index");
+  cardAtt = parseInt(cardAtt);
+  myLibrary.forEach((value, index) => {
+    if (cardAtt === index) {
+      myLibrary.splice(index, 1);
+      indexValue = 0;
+      displayBook();
+    }
+  });
 }
 
 newBook.addEventListener("click", () => {
