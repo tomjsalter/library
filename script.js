@@ -47,11 +47,9 @@ function displayBook() {
     bookTitle.classList.add("book-title");
     pageCount.classList.add("page-count");
     readStatus.classList.add("read-status");
-    if (myLibrary[i].read === true) {
-      readStatus.textContent = "Status: Read";
-    } else if (myLibrary[i].read === false) {
-      readStatus.textContent = "Status: Not read";
-    }
+    readStatus.textContent = !myLibrary[i].read
+      ? "Status: Not read"
+      : "Status: Read";
     toggleStatus.addEventListener("click", () => {
       myLibrary[i].changeStatus();
       readStatus.textContent = !myLibrary[i].read ? "Status: Not read" : "Status: Read";
