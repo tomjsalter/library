@@ -80,7 +80,7 @@ function buildBook() {
     }
 }
 
-function removeBook(cardDiv) {
+function removeBook() {
   let cardAtt = cardDiv.getAttribute("data-index");
   cardAtt = parseInt(cardAtt);
   myLibrary.forEach((value, index) => {
