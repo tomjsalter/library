@@ -158,6 +158,16 @@ input:valid:required {
     align-items: flex-start;
 }
 
+.top-div-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bottom-div-container {
+    margin-top: 20px;
+}
+
 .book-read, .book-not-read {
     border: none;
     color: white; 
@@ -187,4 +197,19 @@ input:valid:required {
 
 .read-status {
     margin-bottom: 20px;
+}
+
+.remove-btn {
+    color: #00285676;
+    border: none;
+    background-color: var(--card-bg-color);
+    height: 45px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.remove-btn:hover {
+    color: var(--remove-color);
+    background-color: #EEF5FF;
 }

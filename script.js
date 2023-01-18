@@ -42,6 +42,8 @@ function buildBook() {
       const pageCount = document.createElement("p");
       const toggleStatus = document.createElement("button");
       const removeButton = document.createElement("button");
+      topDiv.classList.add("top-div-container")
+      bottomDiv.classList.add("bottom-div-container");
       bookAuthor.textContent = `Author: ${myLibrary[i].author}`;
       bookTitle.textContent = myLibrary[i].title;
       pageCount.textContent = `Pages: ${myLibrary[i].pages}`;
@@ -49,7 +51,7 @@ function buildBook() {
         ? "Not read"
         : "Read";
       toggleStatus.classList.add("form-btn");
-      removeButton.classList.add("form-btn");
+      removeButton.classList.add("remove-btn");
       bookAuthor.classList.add("book-author");
       bookTitle.classList.add("book-title");
       pageCount.classList.add("page-count");
