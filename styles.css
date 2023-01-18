@@ -169,6 +169,8 @@ input:valid:required {
 }
 
 .book-read, .book-not-read {
+    width: 80px;
+    padding: 8px 0px;
     border: none;
     color: white; 
     border-radius: 20px;

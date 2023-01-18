@@ -50,7 +50,6 @@ function buildBook() {
       toggleStatus.textContent = !myLibrary[i].read
         ? "Not read"
         : "Read";
-      toggleStatus.classList.add("form-btn");
       removeButton.classList.add("remove-btn");
       bookAuthor.classList.add("book-author");
       bookTitle.classList.add("book-title");
