@@ -64,7 +64,8 @@ function buildBook() {
       cardDiv.setAttribute("data-index", `${indexValue}`);
       cardDiv.classList.add("book-card");
       removeButton.addEventListener("click", () => {
-        removeBook();
+        let cardAtt = cardDiv.getAttribute("data-index");
+        removeBook(cardAtt);
       });
       cardDiv.append(
         bookTitle,
@@ -80,8 +81,7 @@ function buildBook() {
     }
 }
 
-function removeBook() {
-  let cardAtt = cardDiv.getAttribute("data-index");
+function removeBook(cardAtt) {
   cardAtt = parseInt(cardAtt);
   myLibrary.forEach((value, index) => {
     if (cardAtt === index) {
