@@ -35,6 +35,8 @@ function displayBook() {
 function buildBook() {
     for (let i = 0; i < myLibrary.length; i++) {
       const cardDiv = document.createElement("div");
+      const topDiv = document.createElement("div");
+      const bottomDiv = document.createElement("div");
       const bookAuthor = document.createElement("p");
       const bookTitle = document.createElement("p");
       const pageCount = document.createElement("p");
@@ -44,16 +46,18 @@ function buildBook() {
       bookTitle.textContent = myLibrary[i].title;
       pageCount.textContent = `Pages: ${myLibrary[i].pages}`;
       toggleStatus.textContent = !myLibrary[i].read
-        ? "Status: Not read"
-        : "Status: Read";
+        ? "Not read"
+        : "Read";
       toggleStatus.classList.add("form-btn");
       removeButton.classList.add("form-btn");
       bookAuthor.classList.add("book-author");
       bookTitle.classList.add("book-title");
       pageCount.classList.add("page-count");
+      toggleStatusClass(toggleStatus);
       toggleStatus.addEventListener("click", () => {
         myLibrary[i].changeStatus();
-        toggleStatus.textContent = !myLibrary[i].read ? "Status: Not read" : "Status: Read";
+        toggleStatus.textContent = !myLibrary[i].read ? "Not read" : "Read";
+        toggleStatusClass(toggleStatus);
       });
       removeButton.textContent = "Remove";
       cardDiv.setAttribute("data-index", `${indexValue}`);
@@ -62,17 +66,26 @@ function buildBook() {
         let cardAtt = cardDiv.getAttribute("data-index");
         removeBook(cardAtt);
       });
+      topDiv.append(toggleStatus, bookTitle, bookAuthor, pageCount);
+      bottomDiv.append(removeButton);
       cardDiv.append(
-        bookTitle,
-        bookAuthor,
-        pageCount,
-        toggleStatus,
-        removeButton
+        topDiv,
+        bottomDiv
       );
       libraryContainer.appendChild(cardDiv);
       indexValue++;
       popUp.classList.remove("active");
     }
+}
+
+function toggleStatusClass(toggleStatus) {
+  if (toggleStatus.textContent === "Not read") {
+    toggleStatus.classList.add("book-not-read");
+    toggleStatus.classList.remove("book-read");
+  } else if (toggleStatus.textContent === "Read") {
+    toggleStatus.classList.add("book-read");
+    toggleStatus.classList.remove("book-not-read");
+  }
 }
 
 function removeBook(cardAtt) {
