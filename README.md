@@ -18,7 +18,8 @@ There were five key requirements that formed the basis of this project:
 - Reinforced the important of the 'DRY' principle with specific regard to CSS styling to improve the reading and maintenance of the code
 
 ## Improvements
-- [ ] Text goes here
+As part of the course I will return to this project at a later date to add local storage. Whilst adding this new feature I will also make the below improvement(s):
+- [ ] Refactor `buildBook` function to append new books as new elements and delete book elements from the DOM. This would improve performance with larger datasets and requires less HTML recreation and event listeners.
 
 ### Credits
 Thank you to [Rob Kendal](https://robkendal.co.uk/) for the code review and feedback.
