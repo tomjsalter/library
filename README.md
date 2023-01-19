@@ -23,4 +23,4 @@ There were five key requirements that formed the basis of this project:
 ### Credits
 Thank you to [Rob Kendal](https://robkendal.co.uk/) for the code review and feedback.
 
-[^1]: Project forms part of the JavaScript curriculum provided by [The Odin Project](https://www.theodinproject.com/).
+Project forms part of the JavaScript curriculum provided by [The Odin Project](https://www.theodinproject.com/). [^1]
