@@ -1,4 +1,4 @@
-# Project: Library
+# Library app
 A small app that allows a user to add books into an online library via form submission.
 
 🔗 [View live preview](https://library-project-top.netlify.app/)
